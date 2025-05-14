@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
@@ -58,13 +59,15 @@ class NotificationService {
   }
 
   /// Initialize the notification service:
-  /// 1. Request FCM permissions
-  /// 2. Set up local notifications
-  /// 3. Listen for messages
-  /// 4. Save device token
-  /// 5. Handle initial message
+  /// 1. Initialize Firebase
+  /// 2. Request FCM permissions
+  /// 3. Set up local notifications
+  /// 4. Listen for messages
+  /// 5. Save device token
+  /// 6. Handle initial message
   Future<void> initialize() async {
     WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
     await _requestPermissions();
     await _initLocalNotifications();
     _setupFirebaseHandlers();
