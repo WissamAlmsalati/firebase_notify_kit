@@ -2,7 +2,7 @@ name: firebase_notify_kit
 description: "A plug-and-play Firebase notification handler for Flutter with built-in local notification support, payload parsing, and deep linking based on authentication state."
 version: 0.0.1
 homepage: https://github.com/yourusername/notifications_handler
-repository: https://github.com/yourusername/notifications_handler
+repository: https://github.com/WissamAlmsalati/firebase_notify_kit.git
 
 environment:
   sdk: ^3.5.0
